@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Using fetch API Lab</title>
+    <link rel="stylesheet" href="styles.css"/>
+  </head>
+  <body>
+    <h1>Authors</h1>
+      <table id="authors_table">
+      </table>
+
+<script>
+  const tbl = document.getElementById('authors_table');
+  const url = 'https://jsonplaceholder.typicode.com/users';
+
+  fetch(url)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      let authors = data;
+
+      console.log(`All data returned via fetch: ${JSON.stringify(data)}`);
+
+      authors.map(function(author) {
+        console.log(`Author Name: ${author.name}\tAuthor email: ${author.email}`);
+
+        let idx = `${author.id}` - 1;
+        let row = tbl.insertRow(idx);
+
+        let nameCol = row.insertCell(0);
+        let emailCol = row.insertCell(1);
+        let zipCol = row.insertCell(2);
+
+        nameCol.innerHTML = `${author.name}`;
+        emailCol.innerHTML = `${author.email}`;
+        zipCol.innerHTML = `${author.address.zipcode}`;
+      });
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<script>
+// This produces (creates) the promise
+const aPromise = new Promise(function(resolveFunction, rejectFunction) {
+    // Code that either accepts or rejects the promise
+    const now = new Date();
+    if (now.getHours() == 11)  // Current time 10:39 AM
+        resolveFunction();
+    else
+        rejectFunction();
+
+});
+
+function doWhenResolved() {
+    console.log("I execute when promise resolved successfully");
+}
+function doWhenRejected() {
+    console.log("I execute when promise HAS NOT resolved (was rejected)");
+}
+// This consumes (uses) the promise
+console.log(aPromise);
+
+
+aPromise.then (doWhenResolved)
+        .catch(doWhenRejected);
+// Function may be coded as anonymous functions
+aPromise.then (function() {console.log("I execute when promise resolved successfully");})
+        .catch(function() {console.log("I execute when promise HAS NOT resolved (was rejected");});
+// Or using arrow functions
+aPromise.then (() => console.log("I execute when promise resolved successfully"))
+        .catch(() => console.log("I execute when promise HAS NOT resolved (was rejected"));
+
+console.log(aPromise);
+
+</script>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Employee Information System</title>
+    <!-- Use the CSS stylesheet style.css in the css directory -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+</head>
+
+<!-- Use the JavaScript functions in the file scripts.js in the js directory -->
+
+<script src="js/scripts.js"></script>
+
+<!-- When the page loads, call the function fetchEEData() -->
+<body onload=fetchEEData()>
+    <!-- Center the header on the page -->
+    <h1>Employee Information</h1>
+
+    <!-- Center the text within the table in the center -->
+    <table id="thetable" border="2">
+        <tr>
+            <td>Name</td>
+            <td>Gender</td>
+            <td>Picture</td>
+            <td>Click for more Info</td>
+        </tr>
+    </table>
+    <br><br>
+    <!-- This div will hold info for clicked employee -->
+    <div id="empinfo"></div>
+
+</body>
+
+</html>

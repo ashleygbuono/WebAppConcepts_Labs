@@ -1,0 +1,13 @@
+body {
+    background-color:aquamarine;
+}
+
+caption {
+    font-size: xx-large;
+    color:darkred;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,26 @@
+
+
+<script>
+  const url = 'https://jsonplaceholder.typicode.com/users';
+
+  fetch(url)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      let authors = data;
+
+      console.log(`All data returned via fetch: ${JSON.stringify(data)}`);
+
+      authors.map(function(author) {
+        console.log(`Author Name: ${author.name}\tAuthor email: ${author.email}`);
+      });
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+
+</script>
+
+</body>
+</html>

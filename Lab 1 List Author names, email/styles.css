@@ -1,0 +1,30 @@
+#author_name {
+    font-weight: bold;
+}
+
+#authors_table {
+    padding: 50px;
+}
+
+#table_cell {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#authors_table {
+    width: 1000px;
+    border-collapse: collapse;
+}
+
+tr {
+    width: 100%;
+}
+
+td {
+    border: 2px solid black;
+    height: 40px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
